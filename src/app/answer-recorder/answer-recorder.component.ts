@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpeechRecognitionService } from '../speech.service';
 
 @Component({
   selector: 'app-answer-recorder',
@@ -20,16 +21,14 @@ export class AnswerRecorderComponent implements OnInit {
     'have a great day',
     'she sells seashells on the seashore'
   ];  
-  recognition: SpeechRecognition = new Window['SpeechRecognition'];
-  speechRecognitionList: SpeechGrammarList;
+  // recognition: SpeechRecognition = new Window['SpeechRecognition'];
+  // speechRecognitionList: SpeechGrammarList;
   phrasePara: any = document.querySelector('.phrase');
   resultPara: any = document.querySelector('.result');
 
-  constructor() { }
+  constructor(private speechService: SpeechRecognitionService) { }
 
-  ngOnInit(): void {
-    this.recognition = new SpeechRecognition();
-  this.speechRecognitionList = new SpeechGrammarList();
+  ngOnInit(): void {    
   }
 
   selectRandom() {
@@ -37,6 +36,20 @@ export class AnswerRecorderComponent implements OnInit {
     return randomIndex;
   }
 
+  testSpeechService() {
+    this.status = 'listening';  
+    let targetPhrase = this.phrases[this.selectRandom()];
+    // To ensure case consistency while checking with the returned output text
+    targetPhrase = targetPhrase.toLowerCase();
+    this.target = targetPhrase;  
+  
+    var grammar = '#JSGF V1.0; grammar phrase; public <phrase> = ' + targetPhrase +';';
+    // this.speechService.addGrammar(grammar);
+    this.speechService.record(grammar).subscribe(res => {
+      console.log('FINISHED listening.. heard ', res);
+    })
+  }
+/*
   testSpeech() {
     this.status = 'listening';  
     let targetPhrase = this.phrases[this.selectRandom()];
@@ -123,6 +136,6 @@ export class AnswerRecorderComponent implements OnInit {
         //Fired when the speech recognition service has begun listening to incoming audio with intent to recognize grammars associated with the current SpeechRecognition.
         console.log('SpeechRecognition.onstart');
     }
-  }  
+  }  */
 }
 
