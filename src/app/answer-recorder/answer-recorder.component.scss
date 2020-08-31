@@ -1,0 +1,27 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .console {
+        height: 25%;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        background-color: #111f4d;
+        .status, .result, .target {
+            height: 25%;
+            width: 25%;
+        }
+        .status {
+            background-color: #e43a19;
+        }
+        .target {
+            background-color: teal;
+        }
+        .result {
+            background-color: white;            
+        }
+    }
+}
