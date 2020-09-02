@@ -3,16 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AnswerRecorderComponent } from './answer-recorder/answer-recorder.component';
+import { SpeechRecognitionService } from './speech.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AnswerRecorderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ SpeechRecognitionService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
