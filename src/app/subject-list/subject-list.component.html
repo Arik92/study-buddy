@@ -1,1 +1,8 @@
-<p>subject-list works!</p>
+<div class="container" [ngClass]="mode==='test'?'test':'teach'">
+    <div class="header"> 
+        <button [routerLink]="['/']">Back</button>
+        <h1>mode is {{mode}}</h1>
+    </div>
+    <div class="subject-list"></div>    
+    
+</div>
