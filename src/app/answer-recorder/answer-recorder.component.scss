@@ -1,27 +1,31 @@
 .container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);;
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .instructions {        
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;       
+    }
     .console {
-        height: 25%;
-        width: 25%;
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
         display: flex;
         align-items: center;
-        background-color: #111f4d;
-        .status, .result, .target {
-            height: 25%;
-            width: 25%;
-        }
+        justify-content: space-around;
         .status {
-            background-color: #e43a19;
+       
         }
         .target {
-            background-color: teal;
+        
         }
         .result {
-            background-color: white;            
+       
         }
-    }
+    }    
 }

@@ -1,0 +1,26 @@
+<div class="upload-container">
+    <div class="header"> 
+        <app-back-btn></app-back-btn>
+        <h3 class="title">Upload Subject</h3>
+        <span>No one is born knowledgeable. Help yourself and others by uploading helpful summaries that you wish to learn. We will take care of the rest.</span>
+    </div>    
+    <div class="form-container">
+        <div class="form-group" >
+            <mat-form-field class="name-container">
+                <mat-label for="subject_name">Subject Name</mat-label>
+            <input matInput type="text" id="subject_name" [(ngModel)]="subjectName">   
+            <button mat-button *ngIf="subjectName!==''" matSuffix mat-icon-button aria-label="Clear" (click)="subjectName=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+            <div class="file-container">
+                <label for="file">Upload a summary and start learning! (We can only read .txt files)</label>
+            <input type="file" id="subject_file" (change)="onSubjectUpload($event.target.files)" accept=".txt">
+            </div>
+            <div class="btn-container">
+                <button mat-button color="primary">Submit</button>
+                <button mat-button color="warn">Clear</button>
+            </div>
+        </div>
+    </div>    
+</div>

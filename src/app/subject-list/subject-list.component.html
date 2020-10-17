@@ -1,0 +1,11 @@
+<div class="container" [ngClass]="mode==='test'?'test':'teach'">
+    <div class="header"> 
+        <app-back-btn></app-back-btn>
+        <h1>{{mode | uppercase}}</h1>
+    </div>
+    <div class="list-container">
+        <ul class="subject-list">
+            <li *ngFor="let name of subjectNames; let i=index"><a [routerLink]="[subjectLinks[i]]">{{name}}</a></li>
+        </ul>
+    </div>        
+</div>

@@ -1,0 +1,28 @@
+{
+    "subjects": [
+        {
+            "name": "French revolution",
+            "summary": "it was back in 1495...sike",
+            "generated_questions": [{
+                "question": "who was lincoln?",
+                "answer": "president"
+            }]
+        },
+        {
+            "name": "The Discovery of Wakanda",
+            "summary": "it was back in 1495...sike",
+            "generated_questions": [{
+                "question": "wakanda",
+                "answer": "forever"
+            }]
+        },
+        {
+            "name": "Invention of rock music",
+            "summary": "Nickleback founded rock music in 1927",
+            "generated_questions": [{
+                "question": "rock paper or scissors/",
+                "answer": "rock"
+            }]
+        }
+    ]
+}
