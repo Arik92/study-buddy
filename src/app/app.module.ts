@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { MatInputModule } from '@angular/material/input';
@@ -15,6 +16,8 @@ import { SubjectListComponent } from './subject-list/subject-list.component';
 import { HeaderComponent } from './header/header.component';
 import { UploadSubjectComponent } from './upload-subject/upload-subject.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LearnComponent } from './learn/learn.component';
+import { BackBtnComponent } from './back-btn/back-btn.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BtnMenuComponent,
     SubjectListComponent,
     HeaderComponent,
-    UploadSubjectComponent
+    UploadSubjectComponent,
+    LearnComponent,
+    BackBtnComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     MatInputModule,
     MatButtonModule,

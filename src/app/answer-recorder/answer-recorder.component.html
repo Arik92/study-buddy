@@ -1,11 +1,14 @@
 <div class="container">
     <div class="instructions">
-        Click anywhere on the screen to start listening. The result will appear on console
-        <button (click)="testSpeechService()">Begin test</button>
+        <app-back-btn></app-back-btn>
+        Click 'Begin Test' to start listening. <br/> Answer the question as best you can into the speaker(Note: this currently on works on chrome, so if you are on a different browser this wont work)<br />
+        If you need a reminder at any time you can click the (show) button to peek at the answer.
+        <div *ngIf="status!==''" class="status">Status: {{status}}</div>
+        <button mat-raised-button color="primary" (click)="testSpeechService()">Begin Test</button>
     </div>
-    <div class="console">
-        <div class="status">Status: {{status}}</div>
-        <div class="target">Target: {{target}}</div>
+    <div class="console">        
+        <div class="qustion">Current Question: <div class="answer">{{target}}</div></div>
+        <div class="target">Expected Answer: <button (click)="toggleAnswer()">(Show)</button> <div *ngIf="answerFlag" class="answer">{{targetAnswer}}</div></div>
         <div class="result">Result: {{result}}</div>
     </div>
 </div>

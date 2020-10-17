@@ -4,15 +4,40 @@
     width: 100%;
     .header {
         position: absolute;
-        height: 5%;
+        height: 10%;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
-    .subject-list {
+    .list-container {
         position: absolute;
-        height: 95%;
+        height: 90%;
         width: 100%;
-        top: 5%;        
-
+        top: 10%;        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .subject-list {
+            position: absolute;
+            height: 50%;   
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+                height: 10%;
+                display: flex;
+                align-items: center;
+                border: 5px solid black;
+                // box-sizing: border-box;
+                padding: 0 10px 0px 10px;            
+            }
+       }
     }
 }
 .teach {
