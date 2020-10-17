@@ -10,9 +10,9 @@ app.use(express.static(__dirname + '/dist/study-buddy'));
 // app.use(express.static(__dirname + '/src/'+'index.html'));
 
 // console.log('testing env? ', process.env.NODE_ENV);
-app.use(express.static(__dirname + '/src'));
+// app.use(express.static(__dirname + '/src'));
 
-app.get('/*', function(req, res) {
+app.get('/', function(req, res) {
   console.log('triggered /* route. dirName is ', __dirname);
     res.sendFile('src/index.html', {root: path.dirname(__dirname+'/study-buddy/')})
   });
